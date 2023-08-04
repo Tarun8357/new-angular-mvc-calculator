@@ -1,3 +1,4 @@
+![new calc](https://github.com/Tarun8357/new-angular-mvc-calculator/assets/114694793/c72a6e8b-7e24-4ce6-818c-3964bdb8891d)
 # NewAngularCalculator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
