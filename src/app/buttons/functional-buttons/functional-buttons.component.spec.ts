@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FunctionalButtonsComponent } from './functional-buttons.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('FunctionalButtonsComponent', () => {
   let component: FunctionalButtonsComponent;
@@ -8,7 +9,8 @@ describe('FunctionalButtonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FunctionalButtonsComponent ]
+      declarations: [ FunctionalButtonsComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
 

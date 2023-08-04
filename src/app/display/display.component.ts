@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.css']
 })
-export class DisplayComponent {
+export class DisplayComponent{
  @Input() value: any = '';
+ 
 }

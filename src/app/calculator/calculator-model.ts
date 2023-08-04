@@ -1,3 +1,4 @@
+
 export class CalculatorModel{
         // Functional Buttons
         functionalButtons= ['AC', 'DEL', 'UNDO'];
@@ -7,10 +8,5 @@ export class CalculatorModel{
 
         //Operational Buttons
         operationalButtons = [{type:"OPERATOR",value:'ADD',symbol:'+'},{type:"OPERATOR",value:'SUBTRACT',symbol:'-'},{type:"OPERATOR",value:'MULTIPLY',symbol:'*'},{type:"OPERATOR",value:'DIVIDE',symbol:'/'},{type:"OPERATOR",value:'EQUAL',symbol:'='},]
-
    
-   
-
-
-    
 }

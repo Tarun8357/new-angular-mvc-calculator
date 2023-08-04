@@ -7,18 +7,24 @@ import { ConfigService } from '../services/config.service';
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css'],
-  providers:[CalculatorModel]
 })
 export class CalculatorComponent{
-  title = 'calculator';
+
+  
+
   label:any;
-  displayValue ="";
-  value:any='';
+  displayValue="";
+  value:any;
   containerStack:any = [];
   model = new CalculatorModel;
   functionButtns = this.model.functionalButtons;
   numericButtons = this.model.numericButtons;
   operationalButtons = this.model.operationalButtons;
+
+  functionBtnId = "functionBtnId";
+  numericBtnId = "numericBtnId";
+  operationBtnId = "operationBtnId"
+
    
 
   constructor(private connection : ConfigService ){
@@ -71,11 +77,11 @@ export class CalculatorComponent{
 
 
 calculate(){
- this.connection.getValuesBackend(this.containerStack).subscribe((response : any) => {
-   this.setDisplay(response);
+// this.connection.getValuesBackend(this.containerStack).subscribe((response : any) => {
+//   this.setDisplay(response);
     
     
-  });
+//  });
  console.log("Calculate method called");      
   }
  

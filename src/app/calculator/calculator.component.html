@@ -1,4 +1,16 @@
+
+
+<div  class="calculatorContainer">
+<div class="displayContainer">
 <app-display  [value]=displayValue></app-display>
-<app-functional-buttons (onClick)="onFunctionClickHandler(btn)" *ngFor='let btn of functionButtns; let i=index ' class="fnBtns{{i}}" [label]="btn"></app-functional-buttons>
-<app-numeric-buttons (onClick)="onNumericClickHandler(btn)" *ngFor='let btn of numericButtons; let i=index ' class="fnBtns{{i}}" [label]="btn.value"></app-numeric-buttons>
-<app-operational-buttons (onClick)="onOperationalClickHandler(btn)" *ngFor='let btn of operationalButtons; let i=index ' class="fnBtns{{i}}" [label]="btn.symbol"></app-operational-buttons>
+</div>
+    <div class="btnsContainer">
+        <app-functional-buttons (onClick)="onFunctionClickHandler(btn)" *ngFor='let btn of functionButtns; let i=index ' class="fnBtns{{i}}" [label]="btn" [id] = "functionBtnId"></app-functional-buttons>
+
+
+        <app-numeric-buttons (onClick)="onNumericClickHandler(btn)" *ngFor='let btn of numericButtons; let i=index '  [label]="btn.value"  class="numBtns" [id] = "numericBtnId" ></app-numeric-buttons>
+
+
+        <app-operational-buttons (onClick)="onOperationalClickHandler(btn)" *ngFor='let btn of operationalButtons; let i=index '  [label]="btn.symbol" [id] = "operationBtnId"></app-operational-buttons>
+    </div>
+</div>

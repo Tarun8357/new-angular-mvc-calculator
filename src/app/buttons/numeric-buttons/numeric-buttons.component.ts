@@ -10,4 +10,8 @@ export class NumericButtonsComponent extends ButtonsComponent {
   onClickHandler(value:any){
     this.onClick.emit(value);
   }
+
+  override ngOnInit(): void {
+    
+  }
 }

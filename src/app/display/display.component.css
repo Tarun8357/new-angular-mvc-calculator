@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+.display{
+    height: 60px;
+    width:243px;
+    background-color: darkgrey;
+    font-size: 27px;
+    font-family: 'Graduate', cursive;
+    border: 2px solid black;
+    padding:-20px -15px ;
+    border-radius: 8px;
+}

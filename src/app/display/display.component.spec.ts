@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { DisplayComponent } from './display.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('DisplayComponent', () => {
   let component: DisplayComponent;
@@ -8,7 +10,8 @@ describe('DisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayComponent ]
+      declarations: [ DisplayComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
 
@@ -17,7 +20,15 @@ describe('DisplayComponent', () => {
     fixture.detectChanges();
   });
 
+  
+
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should correctly render the passed @Input value', () => {
+    component.value = '';
+    fixture.detectChanges();
+    expect(fixture.nativeElement.innerText).toBe('12345');
   });
 });

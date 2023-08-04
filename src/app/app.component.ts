@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'new-angular-calculator';
+  id = 'calc-1'
 }

@@ -8,8 +8,12 @@ import { CalculatorComponent } from 'src/app/calculator/calculator.component';
   styleUrls: ['./functional-buttons.component.css']
 })
 export class FunctionalButtonsComponent extends ButtonsComponent{
+  
   onClickHandler(value: any){
     this.onClick.emit(value);
+  }
+  override ngOnInit(): void {
+    
   }
 
 }
