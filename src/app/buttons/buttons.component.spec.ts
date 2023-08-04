@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { ButtonsComponent } from './buttons.component';
 
@@ -20,4 +20,15 @@ describe('ButtonsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should test the button', async(() => {
+    spyOn(component, 'onButtonClick');
+  
+    let button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+  
+    fixture.whenStable().then(() => {
+      expect(component.onButtonClick).toHaveBeenCalled();
+    });
+  }));
 });

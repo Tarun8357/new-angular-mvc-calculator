@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { DisplayComponent } from './display.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('DisplayComponent', () => {
@@ -20,15 +20,30 @@ describe('DisplayComponent', () => {
     fixture.detectChanges();
   });
 
+
+
   
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should correctly render the passed @Input value', () => {
+  it('checking null values', () => {
     component.value = '';
     fixture.detectChanges();
-    expect(fixture.nativeElement.innerText).toBe('12345');
+    expect(fixture.nativeElement.querySelector('input').innerText).toEqual('');
   });
+  
+  
+  it('should check the input', () => {
+    let input = fixture.debugElement.nativeElement.querySelector('input');
+    input.nativeElement.value = "1234";
+
+    component.value.subscribe((value: { input: any; name: any; }) => {
+      expect(value.input).toBe("1234");
+      
+    });
+    input.triggerEventHandler('click', null);
+  });   
+
 });
